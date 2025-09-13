@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaUser, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
-import { useLocation } from 'react-router-dom';
+import { FaUser, FaLock, FaEye, FaEyeSlash, FaArrowLeft } from 'react-icons/fa';
+import { useLocation, useNavigate } from 'react-router-dom';
 import WelcomeScreen from '../common/WelcomeScreen';
 
 const LoginForm = ({ onLogin }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -110,6 +111,19 @@ const LoginForm = ({ onLogin }) => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
+        {/* Back Button */}
+        <motion.button
+          onClick={() => navigate('/')}
+          className="flex items-center text-gray-600 hover:text-gray-800 mb-6 transition-colors duration-200"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1 }}
+          whileHover={{ x: -5 }}
+        >
+          <FaArrowLeft className="mr-2" />
+          Back to Role Selection
+        </motion.button>
+
         <div className="text-center mb-8">
           <motion.div
             className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4"

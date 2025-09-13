@@ -15,11 +15,9 @@ export const UserProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check for stored user data on app load
-    const storedUser = localStorage.getItem('hotelease_user');
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
+    // Clear any existing user data to ensure fresh start
+    localStorage.removeItem('hotelease_user');
+    setUser(null);
     setIsLoading(false);
   }, []);
 
