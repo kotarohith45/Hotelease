@@ -186,17 +186,5 @@ The system includes mock data for testing:
 4. Test thoroughly
 5. Submit a pull request
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-For support and questions:
-- Check the API health endpoint: `http://localhost:4000/api/health`
-- Review the console for error messages
-- Ensure both frontend and backend are running
-
----
 
 **HotelEase** - Making hotel management effortless! 🏨✨
